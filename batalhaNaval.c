@@ -20,27 +20,7 @@ int main() {
         printf("Voce passou dos limites");
         return;
     }
-    for (int i = 0; i < 2; i++)
-    {
-        for (int j = 0; j < 4; j++)
-        {
-            if(cordenada_horizontal[0] + j == cordenada_vertical[0])
-            {
-                printf("Colisão!! dois navios na mesma posição");
-                return;
-            }
-            if(cordenada_vertical[1] + j == cordenada_vertical[1])
-            {
-                printf("Colisão!! dois navios na mesma posição");
-                return;
-            } 
-        }
-    }
 
-    for (int i = 0; i < 3; i++)
-    {
-        
-    }
     
     
 
