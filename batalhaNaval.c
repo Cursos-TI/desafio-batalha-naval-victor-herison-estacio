@@ -12,14 +12,34 @@ int main() {
     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
 
-    int navio_horizontal[3], navio_vertical[3] = {3,3,3};
-    int cordenada_horizontal[2] = {5, 2};
-    int  cordenada_vertical[2] = {3, 3};
+    int navio_horizontal[3] = {3,3,3};
+    int navio_vertical[3] = {3,3,3};
+    int cordenada_horizontal[2] = {2, 2};
+    int cordenada_vertical[2] = {3, 6};
 
-    if(cordenada_horizontal[0] + 3 > 9 || cordenada_vertical[0] + 3 > 9 || cordenada_horizontal[1] + 3 > 9 || cordenada_vertical[1] + 3 > 9){
+    if(cordenada_horizontal[0] + 3 > 10 || cordenada_vertical[0] + 3 > 10 || cordenada_horizontal[1] + 3 > 10 || cordenada_vertical[1] + 3 > 10){
         printf("Voce passou dos limites");
-        return;
+        return 0;
     }
+
+    for (int i = 0; i < 3; i++)
+    {
+       tabuleiro[cordenada_horizontal[1]][cordenada_horizontal[0] + i] = navio_horizontal[i];
+
+    }
+
+    for (int i = 0; i <= 3; i++)
+    {
+        if (tabuleiro[cordenada_vertical[1] + i][cordenada_vertical[0]] == 3) {
+            printf("Colisão de navios;\n");
+            return 0;  // Corrigido o retorno para `0`
+        } else {
+            tabuleiro[cordenada_vertical[1] + i][cordenada_vertical[0]] = navio_vertical[i];
+        }
+        
+    }
+
+    
 
     
     
